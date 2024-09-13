@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INNOVYASA</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Additional custom styles */
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        #video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #hero-section {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .fade-in {
+            opacity: 1 !important;
+        }
+
+        .fade-out {
+            opacity: 0 !important;
+        }
+
+        .animate-hero {
+            animation: fadeInUp 2s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <!-- Video Container -->
+    <div id="video-container">
+        <video autoplay muted loop>
+            <source src="./assets/videos/innov_vid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero-section" class="h-screen flex flex-col justify-center items-center text-center">
+        <h1 id="company-name" class="text-5xl md:text-7xl font-bold mb-4">INNOVYASA</h1>
+        <p id="tagline" class="text-xl md:text-2xl">Innovating the Future</p>
+    </section>
+
+    <script>
+        // Wait for the page to load completely
+        window.onload = function() {
+            const heroSection = document.getElementById('hero-section');
+            const companyName = document.getElementById('company-name');
+            const tagline = document.getElementById('tagline');
+
+            // Set a timeout to simulate the video playing before showing the hero section
+            setTimeout(() => {
+                heroSection.classList.add('fade-in');
+                companyName.classList.add('animate-hero');
+                tagline.classList.add('animate-hero');
+            }, 3000); // Adjust this timing as needed (3 seconds in this case)
+        };
+    </script>
+</body>
+</html>
