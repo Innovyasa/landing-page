@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovyasa</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #023047;
+            color: #F9F7F3;
+        }
+
+        .about-glassmorphism {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem;
+            min-height: 200px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: rgba(255, 255, 255, 0);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .about-glassmorphism:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        /* About Us Section Animations */
+        .about-card {
+            opacity: 0;
+            transform: translateX(-100%);
+            animation: about-slideIn 1s ease-in-out forwards;
+            color: #F9F7F3;
+        }
+
+        .about-card:nth-child(1).about-active h3,
+        .about-card:nth-child(1):hover h3 {
+            color: #fb8500;
+        }
+
+        .about-card:nth-child(2).about-active h3,
+        .about-card:nth-child(2):hover h3 {
+            color: #219ebc;
+        }
+
+        .about-card:nth-child(3).about-active h3,
+        .about-card:nth-child(3):hover h3 {
+            color: #ffb703;
+        }
+
+        @keyframes about-slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* About Us Carousel */
+        #about-carousel {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        #about-carousel .about-carousel-slide {
+            margin-top: 45px;
+            transition: opacity 1s ease-in-out, box-shadow 0.3s ease-in-out;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+            color: #F9F7F3;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Default box-shadow */
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .about-glassmorphism {
+                min-height: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="about" class="about_sec mx-auto my-16 p-8">
+        <h2 class="text-3xl font-bold text-center mb-8">About Us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="about-glassmorphism about-card" data-info="We, Team Innovyasa, a group of empowered tech-savvy individuals turn their knowledge into real-world success. Are dedicated towards building a new era breaking the mold of traditional learning, and fostering a space where innovation, creation, and growth are key to thriving in the tech industry. 
+            We leverage technology to improve the quality of life for people around the world Guiding You to New Horizons!
+            Our mission is to be the catalyst that transforms your potential into limitless opportunities, ensuring you can reach your fullest potential.
+            ">
+                <h3 class="text-xl font-semibold mb-4">WHO WE ARE</h3>
+            </div>
+            <div class="about-glassmorphism about-card" data-info="We don’t just teach—we empower you to build, innovate, and thrive in the tech landscape.
+            At Innovyasa, we’re dedicated to transforming your tech knowledge into career success. Whether you’re looking for internships, project insights, or skill enhancement, we’re focused on making your career goals within reach. 
+            Join Innovyasa, where your potential meets endless possibilities.
+            ">
+                <h3 class="text-xl font-semibold mb-4">WHAT WE DO</h3>
+            </div>
+            <div class="about-glassmorphism about-card" data-info="With Innovyasa, You can embark on a journey of discovery and mastery. We provide carefully curated internships, insightful project guidance, and enriching courses that go beyond the basics. Our platform doesn't just build skills; it cultivates a deep understanding and sharpens your career insights. At Innovyasa, we're not just offering services. we're shaping futures, one enthusiast at a time.">
+                <h3 class="text-xl font-semibold mb-4">WHAT YOU GAIN</h3>
+            </div>
+        </div>
+        <div id="about-carousel" class="about-carousel my-8 mx-auto max-w-lg">
+            <div class="about-carousel-slide about-glassmorphism">
+                <p id="about-info" class="text-lg leading-relaxed">Hover over a card to see more information.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // About Us Carousel JavaScript
+        const aboutCards = document.querySelectorAll('.about-card');
+        const aboutInfo = document.getElementById('about-info');
+        const aboutCarouselSlide = document.querySelector('#about-carousel .about-carousel-slide');
+        let currentAboutSlide = 0;
+
+        function showAboutSlide(index) {
+            aboutCards.forEach(card => card.classList.remove('about-active'));
+            aboutCards[index].classList.add('about-active');
+
+            // Update the info box text
+            aboutInfo.textContent = aboutCards[index].dataset.info;
+
+            // Change the box-shadow color of the info box based on the active card
+            const cardColor = window.getComputedStyle(aboutCards[index].querySelector('h3')).color;
+            aboutCarouselSlide.style.boxShadow = `0 8px 32px 0 ${cardColor}`;
+        }
+
+        function nextAboutSlide() {
+            currentAboutSlide = (currentAboutSlide + 1) % aboutCards.length;
+            showAboutSlide(currentAboutSlide);
+        }
+
+        // Initialize About Us carousel
+        showAboutSlide(currentAboutSlide);
+        setInterval(nextAboutSlide, 5000); // Change slide every 5 seconds
+
+        // About Section Interactivity
+        aboutCards.forEach((card, index) => {
+            card.addEventListener('mouseover', () => {
+                showAboutSlide(index);
+            });
+            card.addEventListener('mouseout', () => {
+                showAboutSlide(currentAboutSlide); // Revert back to the current slide
+            });
+        });
+    </script>
+</body>
+
+</html>

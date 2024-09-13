@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovyasa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        body {
+            background-color: #023047;
+            color: #F9F7F3;
+        }
+
+        .subscribe {
+            min-height: 140px;
+            margin: 24px 167px 24px 167px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: rgba(255, 255, 255, 0);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .call_of_action {
+            margin: 0px 167px;
+            min-height: 204px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: rgba(255, 255, 255, 0);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            font-size: 30px;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Call Of Action -->
+    <section class="call_of_action flex flex-col items-center justify-center text-center py-8 px-4 bg-gray-100">
+        <div class="call_of_action-content"></div>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl w-[405.5px] h-[58px] font-semibold leading-tight">
+            Have an idea? Let's get your <br>project started today!
+        </h2>
+        <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md text-base w-[119px] h-[40px]">
+            Get in touch
+        </button>
+    </section>
+    
+    <section class="subscribe flex items-center justify-center min-h-[140px] mx-[167px] my-6 bg-transparent border border-white/20 rounded-lg shadow-lg backdrop-blur-lg">
+        <div class="newsletter-container flex justify-between items-center w-full max-w-[1000px] p-4 bg-[#636b83] rounded-lg">
+            <div class="newsletter-content flex items-center text-white">
+                <div class="newsletter-icon mr-4">
+                    <img src="path-to-your-icon-image/newsletter-icon.png" alt="Newsletter Icon" class="w-10 h-10">
+                </div>
+                <div class="newsletter-text">
+                    <h3 class="text-xl font-bold mb-1">Subscribe to our newsletter</h3>
+                    <p class="text-sm leading-relaxed text-white/80">
+                        Donec eget dignissim id sit egestas in consequat, volutpat elementum donec dolor sit amet cons.
+                    </p>
+                </div>
+            </div>
+            <div class="relative flex items-center">
+                <input type="email" placeholder="Enter your email address" class="px-4 py-2 w-[421px] h-[49px] rounded-l-md text-black text-base pr-[92px]">
+                <button class="absolute right-1 top-50 h-[33px] w-[83px] rounded-md px-1 py-0.5 bg-blue-500 text-white font-bold text-base ">
+                    Subscribe
+                </button>
+            </div>   
+        </div>
+    </section>
+    
+    
+
+
+
+
+
+
+</body>
+
+</html>

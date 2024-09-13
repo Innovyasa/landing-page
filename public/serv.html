@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovyasa</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #023047;
+            color: #F9F7F3;
+        }
+
+        .glassmorphism-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem;
+            min-height: 200px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .glassmorphism-card:hover {
+            transform: scale(1.35);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            min-height: 400px;
+        }
+
+        .glassmorphism-card .video-container,
+        .glassmorphism-card .expand-button,
+        .glassmorphism-card .additional-title,
+        .glassmorphism-card .card-hover-content {
+            display: none;
+        }
+
+        .glassmorphism-card:hover .video-container,
+        .glassmorphism-card:hover .expand-button,
+        .glassmorphism-card:hover .additional-title,
+        .glassmorphism-card:hover .card-hover-content {
+            display: block;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .expand-button {
+            width: 30px;
+            height: 30px;
+            margin-left: auto;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+
+        .expand-button img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .additional-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .card-hover-content {
+            color: #F9F7F3;
+            padding: 1rem;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+        }
+
+        .popup-content {
+            background: white;
+            color: black;
+            padding: 2rem;
+            border-radius: 8px;
+            position: relative;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="services" class="serv_sec py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-14">
+                <div class="glassmorphism-card" id="card1">
+                    <h3 class="text-xl font-semibold mb-4">Internship</h3>
+                    <div class="video-container">
+                        <video src="./assets/videos/innov_vid.mp4" muted autoplay loop></video>
+                    </div>
+                    <div class="expand-button" data-popup="popup1">
+                        <img src="./assets/icons/drop down.png" alt="Dropdown Icon">
+                    </div>
+                    <h3 class="additional-title">Internship</h3>
+                    <div class="card-hover-content">
+                        <p>Shape your future: Secure unique internships designed just for you!</p>
+                    </div>
+                </div>
+                <div class="glassmorphism-card" id="card2">
+                    <h3 class="text-xl font-semibold mb-4">Projects</h3>
+                    <div class="video-container">
+                        <video src="./assets/videos/innov_vid.mp4" muted autoplay loop></video>
+                    </div>
+                    <div class="expand-button" data-popup="popup2">
+                        <img src="./assets/icons/drop down.png" alt="Dropdown Icon">
+                    </div>
+                    <h3 class="additional-title">Projects</h3>
+                    <div class="card-hover-content">
+                        <p>We build your ideas into projects with expert solutions tailored to your needs!</p>
+                    </div>
+                </div>
+                <div class="glassmorphism-card" id="card3">
+                    <h3 class="text-xl font-semibold mb-4">Courses</h3>
+                    <div class="video-container">
+                        <video src="./assets/videos/innov_vid.mp4" muted autoplay loop></video>
+                    </div>
+                    <div class="expand-button" data-popup="popup3">
+                        <img src="./assets/icons/drop down.png" alt="Dropdown Icon">
+                    </div>
+                    <h3 class="additional-title">Courses</h3>
+                    <div class="card-hover-content">
+                        <p>Immerse yourself in the art of coding, mastering programming languages through explicit syntax and algorithms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup 1 -->
+    <div id="popup1" class="popup">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <h2>Internship</h2>
+            <p>Shape your future: Secure unique internships designed just for you!</p>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Learn More</button>
+        </div>
+    </div>
+
+    <!-- Popup 2 -->
+    <div id="popup2" class="popup">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <h2>Projects</h2>
+            <p>We build your ideas into projects with expert solutions tailored to your needs!</p>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Learn More</button>
+        </div>
+    </div>
+
+    <!-- Popup 3 -->
+    <div id="popup3" class="popup">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <h2>Courses</h2>
+            <p>Immerse yourself in the art of coding, mastering programming languages through explicit syntax and algorithms.</p>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Learn More</button>
+        </div>
+    </div>
+
+    <script>
+        // Handle expand button click to show popup
+        document.querySelectorAll('.expand-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const popupId = this.getAttribute('data-popup');
+                document.getElementById(popupId).style.display = 'flex';
+            });
+        });
+
+        // Handle popup close
+        document.querySelectorAll('.popup-close').forEach(closeBtn => {
+            closeBtn.addEventListener('click', function () {
+                this.closest('.popup').style.display = 'none';
+            });
+        });
+
+        // Close popup when clicking outside of it
+        document.querySelectorAll('.popup').forEach(popup => {
+            popup.addEventListener('click', function (e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
