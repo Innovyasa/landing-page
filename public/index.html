@@ -31,20 +31,18 @@
 
     <section id="home" class="hero_sec relative">
         <div id="carousel" class="carousel">
-            
-            <!-- Slide 1: Innovyasa Intro -->
+            <div id="video-container">
+                <video id="intro-video" autoplay muted loop>
+                    <source src="./assets/videos/innov_vid.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay"></div>
+            </div>
             <div class="carousel-slide text-center absolute inset-0 flex flex-col items-center justify-center">
-                <div class="video-container">
-                    <video class="background-video" autoplay muted loop>
-                        <source src="./assets/videos/s1.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="overlay"></div>
-                </div>
                 <section id="hero-section" class="h-screen flex flex-col justify-center items-center text-center">
                     <h1 id="company-name" class="text-5xl md:text-7xl font-bold mb-4">INNOVYASA</h1>
                     <p id="tagline" class="text-xl md:text-2xl">Turn your Brainpower into Action! <br>
-                        <br>Whether you're a budding developer, a seasoned professional looking to upskill,
+                        <br>Whether you're a budding developer,a seasoned professional looking to upskill,
                         <br> or <br>
                         simply curious about the latest trends, we've got you covered.
                     </p>
@@ -53,50 +51,21 @@
                         Started</a>
                 </section>
             </div>
-    
-            <!-- Slide 2: Internships -->
             <div class="carousel-slide text-center absolute inset-0 flex flex-col items-center justify-center">
-                <div class="video-container">
-                    <video class="background-video" autoplay muted loop>
-                        <source src="./assets/videos/s2.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="overlay"></div>
-                </div>
                 <h1 class="text-4xl md:text-6xl font-bold mb-4">INTERNSHIPS</h1>
                 <p class="text-lg md:text-2xl">Shape your future: Secure unique internships designed just for you!</p>
             </div>
-    
-            <!-- Slide 3: Projects -->
             <div class="carousel-slide text-center absolute inset-0 flex flex-col items-center justify-center">
-                <div class="video-container">
-                    <video class="background-video" autoplay muted loop>
-                        <source src="./assets/videos/s3.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="overlay"></div>
-                </div>
                 <h1 class="text-4xl md:text-6xl font-bold mb-4">PROJECTS</h1>
                 <p class="text-lg md:text-2xl">We build your ideas into projects with expert solutions tailored to your
                     needs!</p>
             </div>
-    
-            <!-- Slide 4: Courses -->
             <div class="carousel-slide text-center absolute inset-0 flex flex-col items-center justify-center">
-                <div class="video-container">
-                    <video class="background-video" autoplay muted loop>
-                        <source src="./assets/videos/s4.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="overlay"></div>
-                </div>
                 <h1 class="text-4xl md:text-6xl font-bold mb-4">COURSES</h1>
                 <p class="text-lg md:text-2xl">Immerse yourself in the art of coding, mastering programming languages
                     through explicit syntax and algorithms.
                 </p>
             </div>
-    
-            <!-- Carousel Dots -->
             <div class="carousel-dots">
                 <span class="dot active"></span>
                 <span class="dot"></span>
@@ -105,7 +74,7 @@
             </div>
         </div>
     </section>
-    
+
     <section id="about" class="about_sec mx-auto my-16 p-8">
         <h2 class="text-3xl font-bold text-center mb-8">About Us</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
