@@ -31,7 +31,6 @@ header {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    border-radius: 45px;
 }
 
 #navbar.scrolled {

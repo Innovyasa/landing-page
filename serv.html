@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innovyasa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
@@ -31,6 +32,25 @@
             overflow: hidden;
             z-index: 1;
         }
+
+        /* Hide title and remove blur on hover */
+        .glassmorphism-card:hover #top_title {
+            display: none;
+        }
+
+        .glassmorphism-card:hover .card-hover-content {
+            backdrop-filter: none;
+            /* Remove blur */
+            -webkit-backdrop-filter: none;
+            /* Remove blur for Safari */
+        }
+
+        /* Bring the hover content to the top */
+        .glassmorphism-card .card-hover-content {
+            z-index: 10;
+            /* Make sure content is on top */
+        }
+
 
         .glassmorphism-card:hover {
             transform: scale(1.35);
@@ -89,6 +109,7 @@
             font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 1rem;
+
         }
 
         .card-hover-content {
@@ -97,6 +118,8 @@
             border-radius: 8px;
             box-sizing: border-box;
         }
+
+
 
         /* Popup Styles */
         .popup {
@@ -108,6 +131,7 @@
             justify-content: center;
             align-items: center;
             z-index: 50;
+            max-height: 75%;
         }
 
         .popup-content {
@@ -117,7 +141,7 @@
             border-radius: 8px;
             position: relative;
             width: 90%;
-            max-width: 500px;
+            max-width: 80%;
         }
 
         .popup-close {
@@ -136,12 +160,12 @@
             <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-14">
                 <div class="glassmorphism-card" id="card1">
-                    <h3 class="text-xl font-semibold mb-4">Internship</h3>
+                    <h3 class="text-xl font-semibold mb-4" id="top_title">Internship</h3>
                     <div class="video-container">
-                        <video src="./assets/videos/innov_vid.mp4" muted autoplay loop></video>
+                        <video src="./assets/videos/internship.mp4" muted autoplay loop></video>
                     </div>
                     <div class="expand-button" data-popup="popup1">
-                        <img src="./assets/icons/drop down.png" alt="Dropdown Icon">
+                        <i class="fa-solid fa-circle-chevron-down" style="font-size:32px"></i>
                     </div>
                     <h3 class="additional-title">Internship</h3>
                     <div class="card-hover-content">
@@ -149,12 +173,12 @@
                     </div>
                 </div>
                 <div class="glassmorphism-card" id="card2">
-                    <h3 class="text-xl font-semibold mb-4">Projects</h3>
+                    <h3 class="text-xl font-semibold mb-4" id="top_title">Projects</h3>
                     <div class="video-container">
-                        <video src="./assets/videos/innov_vid.mp4" muted autoplay loop></video>
+                        <video src="./assets/videos/project.mp4" muted autoplay loop></video>
                     </div>
                     <div class="expand-button" data-popup="popup2">
-                        <img src="./assets/icons/drop down.png" alt="Dropdown Icon">
+                        <i class="fa-solid fa-circle-chevron-down" style="font-size:32px"></i>
                     </div>
                     <h3 class="additional-title">Projects</h3>
                     <div class="card-hover-content">
@@ -162,16 +186,17 @@
                     </div>
                 </div>
                 <div class="glassmorphism-card" id="card3">
-                    <h3 class="text-xl font-semibold mb-4">Courses</h3>
+                    <h3 class="text-xl font-semibold mb-4" id="top_title">Courses</h3>
                     <div class="video-container">
-                        <video src="./assets/videos/innov_vid.mp4" muted autoplay loop></video>
+                        <video src="./assets/videos/courses.mp4" muted autoplay loop></video>
                     </div>
                     <div class="expand-button" data-popup="popup3">
-                        <img src="./assets/icons/drop down.png" alt="Dropdown Icon">
+                        <i class="fa-solid fa-circle-chevron-down" style="font-size:32px"></i>
                     </div>
                     <h3 class="additional-title">Courses</h3>
                     <div class="card-hover-content">
-                        <p>Immerse yourself in the art of coding, mastering programming languages through explicit syntax and algorithms.</p>
+                        <p>Immerse yourself in the art of coding, mastering programming languages through explicit
+                            syntax and algorithms.</p>
                     </div>
                 </div>
             </div>
@@ -182,9 +207,12 @@
     <div id="popup1" class="popup">
         <div class="popup-content">
             <span class="popup-close">&times;</span>
+            <div class="video-container">
+                <video src="./assets/videos/internship.mp4" muted autoplay loop></video>
+            </div>
             <h2>Internship</h2>
             <p>Shape your future: Secure unique internships designed just for you!</p>
-            <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Learn More</button>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Show your Interest</button>
         </div>
     </div>
 
@@ -194,7 +222,7 @@
             <span class="popup-close">&times;</span>
             <h2>Projects</h2>
             <p>We build your ideas into projects with expert solutions tailored to your needs!</p>
-            <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Learn More</button>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4"></button>
         </div>
     </div>
 
@@ -203,8 +231,9 @@
         <div class="popup-content">
             <span class="popup-close">&times;</span>
             <h2>Courses</h2>
-            <p>Immerse yourself in the art of coding, mastering programming languages through explicit syntax and algorithms.</p>
-            <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Learn More</button>
+            <p>Immerse yourself in the art of coding, mastering programming languages through explicit syntax and
+                algorithms.</p>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Suggest Us</button>
         </div>
     </div>
 
