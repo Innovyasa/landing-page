@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovyasa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
+<body>
+    <header>
+        <nav id="navbar" class="shadow-md fixed  bg-custom transition-all duration-300 z-50">
+            <div class="container mx-auto flex justify-between items-center p-4">
+                <div class="logo">
+                    <img src="./assets/img/logo_trim-removebg-preview.png" alt="INNOVYASA Logo" class="h-8">
+                </div>
+                <ul class="flex space-x-4 text-custom">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="btn-interest text-custom ">I'm Interested</button>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero_sec relative">
+        <div id="carousel" class="carousel">
+            <div id="video-container">
+                <video id="intro-video" autoplay muted loop>
+                    <source src="./assets/videos/innov_vid.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay"></div>
+            </div>
+            <div class="carousel-slide text-center absolute inset-0 flex flex-col items-center justify-center">
+                <section id="hero-section" class="h-screen flex flex-col justify-center items-center text-center">
+                    <h1 id="company-name" class="text-5xl md:text-7xl font-bold mb-4">INNOVYASA</h1>
+                    <p id="tagline" class="text-xl md:text-2xl">Turn your Brainpower into Action! <br>
+                        <br>Whether you're a budding developer,a seasoned professional looking to upskill,
+                        <br> or <br>
+                        simply curious about the latest trends, we've got you covered.
+                    </p>
+                    <a href="#"
+                        class="mt-8 inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300">Get
+                        Started</a>
+                </section>
+            </div>
+            <div class="carousel-slide text-center absolute inset-0 flex flex-col items-center justify-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">INTERNSHIPS</h1>
+                <p class="text-lg md:text-2xl">Shape your future: Secure unique internships designed just for you!</p>
+            </div>
+            <div class="carousel-slide text-center absolute inset-0 flex flex-col items-center justify-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">PROJECTS</h1>
+                <p class="text-lg md:text-2xl">We build your ideas into projects with expert solutions tailored to your
+                    needs!</p>
+            </div>
+            <div class="carousel-slide text-center absolute inset-0 flex flex-col items-center justify-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">COURSES</h1>
+                <p class="text-lg md:text-2xl">Immerse yourself in the art of coding, mastering programming languages
+                    through explicit syntax and algorithms.
+                </p>
+            </div>
+            <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about_sec mx-auto my-16 p-8">
+        <h2 class="text-3xl font-bold text-center mb-8">About Us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="about-glassmorphism about-card" data-info="We, Team Innovyasa, a group of empowered tech-savvy individuals turn their knowledge into real-world success. Are dedicated towards building a new era breaking the mold of traditional learning, and fostering a space where innovation, creation, and growth are key to thriving in the tech industry. 
+            We leverage technology to improve the quality of life for people around the world Guiding You to New Horizons!
+            Our mission is to be the catalyst that transforms your potential into limitless opportunities, ensuring you can reach your fullest potential.
+            ">
+                <h3 class="text-xl font-semibold mb-4">WHO WE ARE</h3>
+            </div>
+            <div class="about-glassmorphism about-card" data-info="We don’t just teach—we empower you to build, innovate, and thrive in the tech landscape.
+            At Innovyasa, we’re dedicated to transforming your tech knowledge into career success. Whether you’re looking for internships, project insights, or skill enhancement, we’re focused on making your career goals within reach. 
+            Join Innovyasa, where your potential meets endless possibilities.
+            ">
+                <h3 class="text-xl font-semibold mb-4">WHAT WE DO</h3>
+            </div>
+            <div class="about-glassmorphism about-card"
+                data-info="With Innovyasa, You can embark on a journey of discovery and mastery. We provide carefully curated internships, insightful project guidance, and enriching courses that go beyond the basics. Our platform doesn't just build skills; it cultivates a deep understanding and sharpens your career insights. At Innovyasa, we're not just offering services. we're shaping futures, one enthusiast at a time.">
+                <h3 class="text-xl font-semibold mb-4">WHAT YOU GAIN</h3>
+            </div>
+        </div>
+        <div id="about-carousel" class="about-carousel my-8 mx-auto max-w-lg">
+            <div class="about-carousel-slide about-glassmorphism">
+                <p id="about-info" class="text-lg leading-relaxed">Hover over a card to see more information.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="serv_sec py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-14">
+                <div class="glassmorphism-card" id="card1">
+                    <h3 class="text-xl font-semibold mb-4">Internship</h3>
+                    <div class="video-container">
+                        <video src="./assets/videos/internship.mp4" muted autoplay loop></video>
+                    </div>
+                    <div class="expand-button" data-popup="popup1">
+                       <i class="fa-solid fa-circle-chevron-down" style="font-size:32px"></i>
+
+                    </div>
+                    <h3 class="additional-title">Internship</h3>
+                    <div class="card-hover-content">
+                        <p>Shape your future: Secure unique internships designed just for you!</p>
+                    </div>
+                </div>
+                <div class="glassmorphism-card" id="card2">
+                    <h3 class="text-xl font-semibold mb-4">Projects</h3>
+                    <div class="video-container">
+                        <video src="./assets/videos/project.mp4" muted autoplay loop></video>
+                    </div>
+                    <div class="expand-button" data-popup="popup2">
+                       <i class="fa-solid fa-circle-chevron-down" style="font-size:32px"></i>
+                    </div>
+
+                    <h3 class="additional-title">Projects</h3>
+                    <div class="card-hover-content">
+                        <p>We build your ideas into projects with expert solutions tailored to your needs!</p>
+                    </div>
+                </div>
+                <div class="glassmorphism-card" id="card3">
+                    <h3 class="text-xl font-semibold mb-4">Courses</h3>
+                    <div class="video-container">
+                        <video src="./assets/videos/courses.mp4" muted autoplay loop></video>
+                    </div>
+                    <div class="expand-button" data-popup="popup3">
+                       <i class="fa-solid fa-circle-chevron-down" style="font-size:32px"></i>
+                    </div>
+                    <h3 class="additional-title">Courses</h3>
+                    <div class="card-hover-content">
+                        <p>Immerse yourself in the art of coding, mastering programming languages through explicit
+                            syntax and algorithms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup 1 -->
+    <div id="popup1" class="popup">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <h2>Internship</h2>
+            <p>Shape your future: Secure unique internships designed just for you!</p>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Learn More</button>
+        </div>
+    </div>
+
+    <!-- Popup 2 -->
+    <div id="popup2" class="popup">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <h2>Projects</h2>
+            <p>We build your ideas into projects with expert solutions tailored to your needs!</p>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Learn More</button>
+        </div>
+    </div>
+
+    <!-- Popup 3 -->
+    <div id="popup3" class="popup">
+        <div class="popup-content">
+            <span class="popup-close">&times;</span>
+            <h2>Courses</h2>
+            <p>Immerse yourself in the art of coding, mastering programming languages through explicit syntax and
+                algorithms.</p>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4">Learn More</button>
+        </div>
+    </div>
+
+
+    <!-- Call Of Action -->
+    <section class="call_of_action flex flex-col items-center justify-center text-center py-8 px-4 bg-gray-100 mb-12">
+        <div class="call_of_action-content"></div>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl w-[405.5px] h-[58px] font-semibold leading-tight">
+            Have an idea? Let's get your <br>project started today!
+        </h2>
+        <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md text-base w-[119px] h-[40px]">
+            Get in touch
+        </button>
+    </section>
+
+
+
+
+    <footer class="bg-[#023047] text-[#F9F7F3] py-8">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Left section: Rights, Privacy Policy, Terms of Service -->
+            <div>
+                <p class="text-sm">&copy; 2024 Innovyasa. All Rights Reserved.</p>
+                <div class="flex space-x-4 mt-2">
+                    <a href="#" class="text-sm hover:text-blue-500">Privacy Policy</a>
+                    <a href="#" class="text-sm hover:text-blue-500">Terms of Service</a>
+                </div>
+            </div>
+
+            <!-- Right section: Follow us on Social Media -->
+            <div class="flex flex-col items-center space-y-2">
+                <p class="text-sm">Follow us on Social Media</p>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/innovyasa_com/" class="hover:text-blue-500">
+                        <i class="fab fa-instagram fa-lg"></i> <!-- Instagram Icon -->
+                    </a>
+                    <a href="https://www.linkedin.com/company/innovyasa/" class="hover:text-blue-500">
+                        <i class="fab fa-linkedin fa-lg"></i> <!-- LinkedIn Icon -->
+                    </a>
+                
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
